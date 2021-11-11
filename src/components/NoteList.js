@@ -1,12 +1,17 @@
 import React from 'react';
 import Note from './Note';
 
-const NoteList = () => {
+
+const NoteList = ({messages}) => {
+  console.log(messages);
+
+  const renderNotes = messages.map((message)=> {
+    return <Note key={message} message={message} />;
+  });
+
   return(
-    <div style={{marginTop: '20px'}}>
-      <Note />
-      <Note />
-      <Note />
+    <div style={{marginTop: '20px', width: '100%'}}>
+      {renderNotes}
     </div>
   );
 }

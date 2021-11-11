@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NoteForm from './components/NoteForm';
 import NoteList from './components/NoteList';
 
 const App = () => {
+  const [messages, setMessages] = useState([
+    'Take dog out.',
+    'Clean up bedroom.',
+    'Buy flowers.'
+  ]);
+
   return(
     <div 
       className="ui raised very padded text container segment"
@@ -10,7 +16,7 @@ const App = () => {
     >
       <h1>TODO App</h1>
       <NoteForm />
-      <NoteList />
+      <NoteList messages={messages} />
     </div>
   );
 }
