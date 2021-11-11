@@ -1,0 +1,16 @@
+.note-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-container p {
+ margin-bottom: 0;
+}
+
+.note-icon-container {
+  display: flex;
+  justify-content: center;
+}
