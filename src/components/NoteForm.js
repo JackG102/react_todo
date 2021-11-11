@@ -1,12 +1,27 @@
 import React from 'react';
 import './NoteForm.css';
 
-const NoteForm = () => {
+const NoteForm = ({formValue, setFormValue, setMessages, messages}) => {
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    setMessages([...messages, formValue]);
+  };
+
   return(
-    <form>
+    <form onSubmit={onFormSubmit}>
       <div className="form-input-container ui input">
-        <input type="text" />
-        <button className="ui primary button">Submit</button>
+        <input type="text" 
+            defaultValue={formValue} onChange={(e) => {
+            setFormValue(e.target.value)
+          }}
+        />
+        <button 
+          type="submit" 
+          className="ui primary button"
+        >
+          Submit
+        </button>
       </div>
     </form>
   );
