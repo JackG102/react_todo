@@ -5,7 +5,7 @@ const App = () => {
   return(
     <div 
       className="ui raised very padded text container segment"
-      style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+      style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px'}}
     >
       <h1>TODO App</h1>
       <NoteForm />
