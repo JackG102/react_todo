@@ -23,7 +23,7 @@ const NoteForm = ({formValue, setFormValue, setMessages, messages}) => {
           type="submit" 
           className="ui primary button"
         >
-          Submit
+          Add
         </button>
       </div>
     </form>
