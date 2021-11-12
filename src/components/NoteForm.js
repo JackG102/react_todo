@@ -13,11 +13,13 @@ const NoteForm = ({formValue, setFormValue, setMessages, messages}) => {
   return(
     <form onSubmit={onFormSubmit}>
       <div className="form-input-container ui input">
-        <input type="text" 
-            value={formValue}
-            onChange={(e) => {
-              setFormValue(e.target.value)
-            }}
+        <input
+          required
+          type="text"
+          value={formValue}
+          onChange={(e) => {
+            setFormValue(e.target.value)
+          }}
         />
         <button 
           type="submit" 
