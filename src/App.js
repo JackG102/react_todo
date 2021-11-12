@@ -9,7 +9,7 @@ const App = () => {
     'Buy flowers.'
   ]);
 
-  const [formValue, setFormValue] = useState('test');
+  const [formValue, setFormValue] = useState('');
 
   return(
     <div 
