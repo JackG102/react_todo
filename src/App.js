@@ -17,15 +17,15 @@ const App = () => {
       style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px'}}
     >
       <h1>TODO App</h1>
-      <NoteForm 
-        formValue={formValue} 
-        setFormValue={setFormValue} 
+      <NoteForm
+        formValue={formValue}
+        setFormValue={setFormValue}
         setMessages={setMessages}
         messages={messages}
       />
-      <NoteList 
-        messages={messages} 
-        setMessages={setMessages} 
+      <NoteList
+        messages={messages}
+        setMessages={setMessages}
       />
     </div>
   );

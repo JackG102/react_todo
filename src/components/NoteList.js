@@ -6,11 +6,11 @@ const NoteList = ({messages, setMessages}) => {
 
   const renderNotes = messages.map((message)=> {
     return (
-      <Note 
-        key={message} 
-        message={message} 
+      <Note
+        key={message}
+        message={message}
         messages={messages}
-        setMessages={setMessages} 
+        setMessages={setMessages}
       />
     );
   });

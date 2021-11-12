@@ -2,6 +2,7 @@ import React from 'react';
 import './Note.css';
 
 const Note = ({message, messages, setMessages}) => {
+
   const deleteMessage = () => {
     setMessages(messages.filter((item) => item !== message ));
   };
