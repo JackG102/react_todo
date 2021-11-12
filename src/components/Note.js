@@ -1,7 +1,7 @@
 import React from 'react';
 import './Note.css';
 
-const Note = ({message, messages, setMessages}) => {
+const Note = ({message, messages, setMessages, setEditMode, setFormValue, setMessage}) => {
   // Note to Self: Filter is a pain to learn initially, but it makes sense.
   // Filter is basically looping(foreach) through an array by item.
   // Then, doing some logic it creates a new array filtering out
@@ -13,11 +13,17 @@ const Note = ({message, messages, setMessages}) => {
     setMessages(messages.filter((item) => item !== message ));
   };
 
+  const enableEditMode = () => {
+    setEditMode(true);
+    setFormValue(message);
+    setMessage(message);
+  }
+
   return(
     <div className="note-container ui raised segment">
       <p>{message}</p>
       <div className="note-icon-container">
-        <i className="edit icon"></i>
+        <i className="edit icon" onClick={enableEditMode}></i>
         <i className="trash icon" onClick={deleteMessage}></i>
       </div>
     </div>

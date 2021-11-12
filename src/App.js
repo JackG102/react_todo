@@ -8,8 +8,9 @@ const App = () => {
     'Clean up bedroom.',
     'Buy flowers.'
   ]);
-
+  const [message, setMessage] = useState('');
   const [formValue, setFormValue] = useState('');
+  const [editMode, setEditMode] = useState(false);
 
   return(
     <div 
@@ -20,12 +21,19 @@ const App = () => {
       <NoteForm
         formValue={formValue}
         setFormValue={setFormValue}
-        setMessages={setMessages}
         messages={messages}
+        setMessages={setMessages}
+        editMode={editMode}
+        setEditMode={setEditMode}
+        message={message}
+        setMessage={setMessage}
       />
       <NoteList
         messages={messages}
         setMessages={setMessages}
+        setEditMode={setEditMode}
+        setFormValue={setFormValue}
+        setMessage={setMessage}
       />
     </div>
   );

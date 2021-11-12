@@ -2,7 +2,7 @@ import React from 'react';
 import Note from './Note';
 
 
-const NoteList = ({messages, setMessages}) => {
+const NoteList = ({messages, setMessages, setEditMode, setFormValue, setMessage}) => {
 
   const renderNotes = messages.map((message)=> {
     return (
@@ -11,6 +11,9 @@ const NoteList = ({messages, setMessages}) => {
         message={message}
         messages={messages}
         setMessages={setMessages}
+        setEditMode={setEditMode}
+        setFormValue={setFormValue}
+        setMessage={setMessage}
       />
     );
   });

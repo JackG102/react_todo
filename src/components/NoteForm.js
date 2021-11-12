@@ -1,14 +1,25 @@
 import React from 'react';
 import './NoteForm.css';
 
-const NoteForm = ({formValue, setFormValue, setMessages, messages}) => {
+const NoteForm = ({formValue, setFormValue, setMessages, messages, editMode, setEditMode, message, setMessage}) => {
 
   const onFormSubmit = (event) => {
-    event.preventDefault();
-    setMessages([...messages, formValue]);
-    setFormValue('');
-    console.log(formValue);
+    if (editMode !== true) {
+      event.preventDefault();
+      setMessages([...messages, formValue]);
+      setFormValue('');
+    } else {
+      event.preventDefault();
+      const index = messages.findIndex(el => el === message);
+      let newMessages = [...messages];
+      newMessages[index] = formValue;
+      setMessages(newMessages);
+      setFormValue('');
+      setEditMode(false);
+    }
   };
+
+  const buttonText = editMode ? 'Edit' : 'Add';
 
   return(
     <form onSubmit={onFormSubmit}>
@@ -25,7 +36,7 @@ const NoteForm = ({formValue, setFormValue, setMessages, messages}) => {
           type="submit" 
           className="ui primary button"
         >
-          Add
+          {buttonText}
         </button>
       </div>
     </form>
