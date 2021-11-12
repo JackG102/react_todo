@@ -23,7 +23,10 @@ const App = () => {
         setMessages={setMessages}
         messages={messages}
       />
-      <NoteList messages={messages} />
+      <NoteList 
+        messages={messages} 
+        setMessages={setMessages} 
+      />
     </div>
   );
 }
