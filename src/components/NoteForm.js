@@ -19,7 +19,7 @@ const NoteForm = ({formValue, setFormValue, setMessages, messages, editMode, set
     }
   };
 
-  const buttonText = editMode ? 'Edit' : 'Add';
+  const buttonText = editMode ? 'Update' : 'Add';
 
   return(
     <form onSubmit={onFormSubmit}>
